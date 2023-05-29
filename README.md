@@ -1,2 +1,2 @@
 # ExtensionUNAL-DJANGO
-Extension UNAL representation using Django Framework.
+UNAL Extension representation using Django Framework.
