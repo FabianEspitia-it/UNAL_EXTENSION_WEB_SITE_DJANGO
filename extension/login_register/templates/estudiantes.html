@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'estudiantes1.css' %}">
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Logotipo_de_la_Universidad_Nacional_de_Colombia.svg/1200px-Logotipo_de_la_Universidad_Nacional_de_Colombia.svg.png" type="image/x-icon">
+    <title>Students</title>
+</head>
+<body>
+    <h1> STUDENTS LIST </h1>
+        {% for n in estudiantes %}    
+            <p> {{n}} </p>
+        {% endfor %}
+        <section>
+            <h2> FILTER BY </h2>
+            <input type="text" placeholder="Student_Name">
+            <a href="update_student"><button class="update"> UPDATE STUDENT </button></a>
+        </section>
+    
+
+</body>
+</html>
