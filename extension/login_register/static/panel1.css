@@ -17,21 +17,6 @@ body{
     background-size: cover;
 }
 
-body::-webkit-scrollbar {
-    width: 1.2rem;               
-  }
-  
-  body::-webkit-scrollbar-track {
-    background: #77aa77;        
-  }
-  
-  body::-webkit-scrollbar-thumb {
-    background-color: rgb(128, 255, 170);    
-    border-radius: 2.0rem;       
-    border: 0.3rem solid #77aa77;  
-  }
-
-
 h1{
     margin-top: 2%;
     font-size: 4.0rem;
@@ -39,64 +24,41 @@ h1{
     text-align: center;
 }
 
-p{
-    font-size: 1.9rem;
-    position: relative;
-    left: 45rem;
-    text-align: center;
-    margin-top: 3%;
-    height: 5rem;
-    width: 50rem;
-    background-color: white;
-    border: 0.17rem solid rgb(203, 203, 203);
-    border-radius: 1rem;
-    transition: 0.5s;
-}
 
-p:hover{
-    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
 
-}
-
-section{
-    position: relative;
-    right: 45rem;
-    bottom: 438rem;
-    background-color: white;
-    margin: auto;
-    margin-top: 1%;
-    width: 19%;
+button{
+    margin-top: 5%;
+    margin-bottom: 3%;
+    margin-left: 7.5%;
+    width: 30rem;
     height: 15rem;
-    border: 0.17rem solid rgb(203, 203, 203);
-    border-radius: 7%;
-    text-align: center;
-}
-h2{
-    margin-top: 6%;
-}
-
-input{
-    margin-top: 7%;
-    border: 0.17rem solid rgb(203, 203, 203);
+    display: inline-block;
+    background-color: white;
+    border: 0 solid;
     border-radius: 1rem;
-    height: 15%;
+    transition: 0.4s;
 }
 
+button:hover{
+    color: rgb(199, 247, 215);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    
+}
 
-
-.update{
-    border: 0.17rem solid rgb(203, 203, 203);
-    border-radius: 1rem;
-    width: 16rem;
-    height: 15%;
-    margin-top: 13%;
-    color: white;
-    background-color: rgb(128, 255, 170);
+.home{
+    color: rgba(65, 65, 243, 0.888);
+    position: absolute;
+    bottom: 47rem;
+    left: 83%;
+    background-color: rgb(151, 182, 204);
+    border: 2px solid rgb(175, 244, 198); 
+    width: 9rem;
+    height: 3rem;
+    border-radius: 100%;
     transition: 0.5s;
-    border: 2px solid rgb(175, 244, 198)
 }
 
-.update:hover{
+.home:hover{
+    color: white;
     box-shadow: rgba(175, 244, 198, 0.4) 5px 5px, rgba(175, 244, 198, 0.3) 10px 10px, rgba(175, 244, 198, 0.2) 15px 15px, rgba(175, 244, 198, 0.1) 20px 20px, rgba(175, 244, 198, 0.05) 25px 25px;
-
 }

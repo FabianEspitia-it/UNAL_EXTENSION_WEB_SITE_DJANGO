@@ -5,20 +5,20 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'profesores.css' %}">
+    <link rel="stylesheet" href="{% static 'servicios.css' %}">
     <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Logotipo_de_la_Universidad_Nacional_de_Colombia.svg/1200px-Logotipo_de_la_Universidad_Nacional_de_Colombia.svg.png" type="image/x-icon">
-    <title>Teachers</title>
+    <title>ServicesList</title>
 </head>
 <body>
-    <a href="/panel/admin"><button class="home">🏠Home</button></a>
-    <h1> TEACHERS LIST </h1>
-        {% for n in profesores %}    
+        <a href="/panel/admin"><button class="home">🏠Home</button></a>
+        <h1> SERVICES LIST </h1>
+        {% for n in servicios %}    
             <p> {{n}} </p>
         {% endfor %}
         <section>
             <h2> FILTER BY </h2>
-            <input type="text" placeholder="Teacher_Name">
-            <a href="/panel/inprogres"><button class="update"> UPDATE TEACHER </button></a>
+            <input type="text" placeholder="Service name">
+            <a href="/panel/inprogres"><button class="update"> UPDATE SERVICE </button></a>
         </section>
     
 

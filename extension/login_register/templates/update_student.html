@@ -6,45 +6,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'updateStudent.css' %}">
-    <!-- <link rel="stylesheet" href="update_estudent.css"> -->
     <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Logotipo_de_la_Universidad_Nacional_de_Colombia.svg/1200px-Logotipo_de_la_Universidad_Nacional_de_Colombia.svg.png" type="image/x-icon">
     <title>UpdateStudent</title>
 </head>
 <body>
-    <header class="titles">
-        <a href="/panel/admin/">
-            <button>
-                <img src="https://cdn-icons-png.flaticon.com/512/25/25694.png" alt="">
-                Home
-            </button>
-        </a>
+        <a href="/panel/admin"><button class="home">🏠Home</button></a>
         <h1 class="titles__item--principal">UPDATE STUDENT</h1>
-    </header>
     <main>
         <form method="post">
             {% csrf_token %}
-            <div>
-                <h3>Student_id</h3>
-                <input type="number" placeholder="Write Student ID to update">
-            </div>
+            {% if error %}
+                <div>
+                    <h3>Student_id</h3>
+                    <input name="id" type="number" placeholder="{{error}}" required>
+                </div>
+            {% else %}
+                <div>
+                    <h3>Student_id</h3>
+                    <input name="id" type="number" placeholder="Write Student ID to update" required>
+                </div>
+            {% endif %}
             
             <div>
                 <h3>Name</h3>
-                <input type="password" >
+                <input name="name" type="text" required>
             </div>
             
             <div>
                 <h3>Email</h3>   
-                <input type="text" >
+                <input name="mail" type="email" required>
             </div>
             
             <div>
                 <h3>Role</h3>   
-                <input type="text">
+                <input name="role" list="opciones" type="text" required>
+                <datalist id="opciones">
+                    <option value="Admin">
+                    <option value="Student">
+                </datalist>
             </div>
 
-            <button class="update">UPDATE</button>
-            <a href="" class="admin_panel"><button>ADMIN PANEL</button></a> 
+            <button class="update">UPDATE</button> 
 
         </form>
     </main>
