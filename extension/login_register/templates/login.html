@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Logotipo_de_la_Universidad_Nacional_de_Colombia.svg/1200px-Logotipo_de_la_Universidad_Nacional_de_Colombia.svg.png" type="image/x-icon">
+    <title>Login</title>
+</head>
+<body>
+    <header class="titles">
+        <h1 class="titles__item--principal">UNAL Extension</h1>
+        <h3 class="titles__item--information">Information's System</h3>
+    </header>
+    <main>
+        <form method="post">
+            {% csrf_token %}
+            <input name="mail" type="text" placeholder="Email" required>
+            <input name= "contraseña "type="password" placeholder="Password" required>
+            <input name="rol" type="text" list="opciones" placeholder="Role" required>
+            <datalist id="opciones">
+                <option value="Admin">
+                <option value="Estudiante">
+            </datalist>
+            <button class="loginButton" >Login</button>
+        </form>
+        <a href="register">
+            <button class="registerButton">Register</button>
+        </a>
+        
+    </main>
+
+    {% if error %}
+            <p> {{error}} </p>
+        {% endif %}
+</body>
+</html>

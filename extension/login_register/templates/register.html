@@ -1,0 +1,39 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+    <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Logotipo_de_la_Universidad_Nacional_de_Colombia.svg/1200px-Logotipo_de_la_Universidad_Nacional_de_Colombia.svg.png" type="image/x-icon">
+</head>
+<body>
+        <h1> UNAL Extension</h1>
+        <h2> Information's System</h2>
+        <section>
+            <form method="post">
+                {% csrf_token %}                
+                <input name="userName" type="text" placeholder="USERNAME" required>
+                <input name= "mail" type="email" placeholder="MAIL" required>
+                <input name= "contraseña" type="password" placeholder="PASSWORD" required>
+                <input name= "confirmPassword"type="password" placeholder="CONFIRM PASSWORD" required>
+                <input name = "rol" type="text" list="opciones" placeholder="ROLE" required>
+                <datalist id="opciones">
+                    <option value="STUDENT">
+                    <option value="ADMIN"></option>
+                </datalist>
+
+                <button class="registerButton">Register</button>
+            </form>
+            <a href="/"><button class="loginButton">Login</button></a>
+        </section>
+
+        {% if error %}
+        <h2 class="errorText"> {{error}} </h2>
+             
+        {% endif %}
+   
+</body>
+</html>
