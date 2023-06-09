@@ -5,48 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'update_courses.css' %}">
-    <!-- <link rel="stylesheet" href="add_courses.css"> -->
+    <link rel="stylesheet" href="{% static 'add_courses.css' %}">
     <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Logotipo_de_la_Universidad_Nacional_de_Colombia.svg/1200px-Logotipo_de_la_Universidad_Nacional_de_Colombia.svg.png" type="image/x-icon">
-    <title>Login</title>
+    <title>AddCourse</title>
 </head>
 <body>
-    <header class="titles">
-        <a href="">
-            <img src="./casita.png" alt="">
-            <h3>Home</h3>
-        </a>
-        <h1 class="titles__item--principal">ADD COURSES</h1>
-    </header>
+    <a href="/panel/admin"><button class="home">🏠Home</button></a>
+        <h1 class="titles__item--principal">ADD COURSE</h1>
     <main>
         <form method="post">
             {% csrf_token %}
             <div>
                 <h3>Course name:</h3>
-                <input type="text" >
+                <input name="nombre" type="text" >
             </div>
             
             <div>
                 <h3>Teacher:</h3>
-                <input type="password" >
+                <input name="profesor" type="number" >
             </div>
             
             <div>
                 <h3>Date:</h3>   
-                <input type="date" >
+                <input name="fecha" type="date" >
             </div>
             
             <div>
                 <h3>Mode:</h3>   
-                <input type="text" list="opciones_mod">
+                <input name="modalidad" type="number">
             </div>
-            <datalist id="opciones_mod">
-                <option value="Face to face">
-                <option value="Virtual"> 
-            </datalist>
 
-            <button class="update">ADD COURSE</button>
-            <a href="" class="admin_panel"><button>ADMIN PANEL</button></a> 
+            <button class="update">ADD COURSE</button> 
 
         </form>
     </main>

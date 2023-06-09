@@ -10,9 +10,12 @@
     <title>Students</title>
 </head>
 <body>
+    <a href="/panel/admin"><button class="home">🏠Home</button></a>
     <h1> STUDENTS LIST </h1>
-        {% for n in estudiantes %}    
-            <p> {{n}} </p>
+        {% for n in estudiantes %}  
+            {% if n.rol == "STUDENT" or n.rol == "Student" %}  
+                <p> {{n}} </p>
+            {% endif %}
         {% endfor %}
         <section>
             <h2> FILTER BY </h2>

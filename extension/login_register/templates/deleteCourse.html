@@ -3,24 +3,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'profesores.css' %}">
+    <link rel="stylesheet" href="{% static 'deleteCourse1.css' %}">
     <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Logotipo_de_la_Universidad_Nacional_de_Colombia.svg/1200px-Logotipo_de_la_Universidad_Nacional_de_Colombia.svg.png" type="image/x-icon">
-    <title>Teachers</title>
+    <title>DeleteCourse</title>
 </head>
 <body>
     <a href="/panel/admin"><button class="home">🏠Home</button></a>
-    <h1> TEACHERS LIST </h1>
-        {% for n in profesores %}    
-            <p> {{n}} </p>
-        {% endfor %}
-        <section>
-            <h2> FILTER BY </h2>
-            <input type="text" placeholder="Teacher_Name">
-            <a href="/panel/inprogres"><button class="update"> UPDATE TEACHER </button></a>
-        </section>
+    <h1> DELETE COURSE </h1>
+    <form method="POST">
+        {% csrf_token %}
+        <input name="nombre" type="text" placeholder="Course name to delete" required>
+        <button class="borrado">Delete!</button>
+    </form>
+    {% if error %}
+        <h2> {{error}} </h2>
+    {% endif %}
     
-
 </body>
 </html>

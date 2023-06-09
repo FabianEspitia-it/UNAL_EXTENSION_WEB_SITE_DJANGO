@@ -5,12 +5,13 @@
 #   * Make sure each ForeignKey and OneToOneField has `on_delete` set to the desired behavior
 #   * Remove `managed = False` lines if you wish to allow Django to create, modify, and delete the table
 # Feel free to rename the models, but don't rename db_table values or field names.
+from typing import Any
 from django.db import models
 
 
 class CursarEstudianteCursos(models.Model):
     id_estudiante = models.ForeignKey('Estudiante', models.DO_NOTHING, db_column='id_estudiante', blank=True, null=True)
-    id_cursos_diplomados = models.ForeignKey('CursosDiplomados', models.DO_NOTHING, db_column='id_cursos_diplomados', blank=True, null=True)
+    id_cursos_diplomados = models.ForeignKey('CursosDiplomados', db_column='id_cursos_diplomados', on_delete=models.CASCADE, blank=True, null=True)
     id_profesor = models.ForeignKey('Profesor', models.DO_NOTHING, db_column='id_profesor', blank=True, null=True)
 
     class Meta:
@@ -40,6 +41,13 @@ class CursosDiplomados(models.Model):
         managed = False
         db_table = 'cursos_diplomados'
 
+    def __str__(self):
+        try:
+            return f"{self.nombre} // {self.fecha} // {self.id_modalidad} // {self.id_profesor.nombre} // ID: {self.id}"
+        except:
+            return f"{self.nombre} // {self.fecha} // {self.id_modalidad} // {None}"
+
+
 
 class Decano(models.Model):
     nombre = models.CharField(max_length=60, blank=True, null=True)
@@ -48,6 +56,9 @@ class Decano(models.Model):
     class Meta:
         managed = False
         db_table = 'decano'
+
+    def __str__(self):
+        return f"{self.nombre} // {self.correo} // ID: {self.id}"
 
 
 class Direccion(models.Model):
@@ -99,6 +110,9 @@ class Facultad(models.Model):
     class Meta:
         managed = False
         db_table = 'facultad'
+    
+    def __str__(self):
+        return f"{self.nombre}"
 
 
 class IntegranteEquipoTrabajo(models.Model):
@@ -118,6 +132,8 @@ class Modalidad(models.Model):
     class Meta:
         managed = False
         db_table = 'modalidad'
+    def __str__(self):
+        return f"{self.tipo_modalidad}"
 
 
 class PertenecerSedeFacultad(models.Model):
@@ -148,7 +164,7 @@ class Profesor(models.Model):
         managed = False
         db_table = 'profesor'
     def __str__(self):
-        return f"{self.nombre} /// {self.correo}"
+        return f"{self.nombre} /// {self.correo} /// ID: {self.id}"
 
 
 class Proyecto(models.Model):
@@ -162,6 +178,9 @@ class Proyecto(models.Model):
     class Meta:
         managed = False
         db_table = 'proyecto'
+        
+    def __str__(self):
+        return f"{self.nombre} // {self.fecha} // {self.id_sede}"
 
 
 class Sede(models.Model):
@@ -173,6 +192,8 @@ class Sede(models.Model):
     class Meta:
         managed = False
         db_table = 'sede'
+    def __str__(self):
+        return f"{self.nombre}"
 
 
 class ServicioCiudadania(models.Model):
@@ -215,6 +236,9 @@ class ServicioDetalleEstado(models.Model):
     class Meta:
         managed = False
         db_table = 'servicio_detalle_estado'
+
+    def __str__(self):
+        return f"{self.nombre}"
 
 
 class ServicioEmpresa(models.Model):

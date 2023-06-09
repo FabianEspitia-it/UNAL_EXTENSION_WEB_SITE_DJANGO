@@ -33,7 +33,7 @@ body::-webkit-scrollbar {
 
 
 h1{
-    margin-top: 2%;
+    margin-top: 1%;
     font-size: 4.0rem;
     color: white;
     text-align: center;
@@ -42,7 +42,7 @@ h1{
 p{
     font-size: 1.9rem;
     position: relative;
-    left: 45rem;
+    left: 43rem;
     text-align: center;
     margin-top: 3%;
     height: 5rem;
@@ -118,3 +118,41 @@ input{
     color: white;
     box-shadow: rgba(175, 244, 198, 0.4) 5px 5px, rgba(175, 244, 198, 0.3) 10px 10px, rgba(175, 244, 198, 0.2) 15px 15px, rgba(175, 244, 198, 0.1) 20px 20px, rgba(175, 244, 198, 0.05) 25px 25px;
 }
+
+.boton1{
+    position: relative;
+    bottom: 4.8rem;
+    left: 96rem;
+    background-color: rgb(255, 205, 41);
+    border: 2px solid rgb(204, 164, 33); 
+    border-radius: 1rem;
+    width: 7rem;
+    height: 4rem;
+    transition: 0.5s;
+    
+}
+
+.boton1:hover{
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.boton2{
+    position: relative;
+    bottom: 4.8rem;
+    left: 101rem;
+    background-color: rgb(242, 72, 34);
+    border: 2px solid rgb(190, 67, 34); 
+    border-radius: 1rem;
+    width: 7rem;
+    height: 4rem;
+    transition: 0.5s;
+}
+
+.boton2:hover{
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+
+

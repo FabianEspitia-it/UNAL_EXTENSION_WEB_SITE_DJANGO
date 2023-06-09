@@ -5,22 +5,23 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'panel.css' %}">
+    <link rel="stylesheet" href="{% static 'panel1.css' %}">
     <link rel="shortcut icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Logotipo_de_la_Universidad_Nacional_de_Colombia.svg/1200px-Logotipo_de_la_Universidad_Nacional_de_Colombia.svg.png" type="image/x-icon">
     <title>AdminPanel</title>
     
 
 </head>
 <body>
+    <a href="/"><button class="home">Logout </button></a>
 
     <h1>¿Admin where do you want to access today?</h1>
     <main>
-        <a href=""><button>COURSES</button></a>
-        <a href=""><button>SERVICES</button></a>
-        <a href=""><button>PROJECTS</button></a>
+        <a href="courses"><button>COURSES</button></a>
+        <a href="services"><button>SERVICES</button></a>
+        <a href="projects"><button>PROJECTS</button></a>
         <a href="students"><button>STUDENTS</button></a>
         <a href="teachers"><button>TEACHERS</button></a>
-        <a href=""><button>DEANS</button></a>
+        <a href="deans"><button>DEANS</button></a>
     </main>
     
 </body>
