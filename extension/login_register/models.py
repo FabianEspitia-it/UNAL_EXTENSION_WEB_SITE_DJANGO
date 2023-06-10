@@ -7,6 +7,7 @@
 # Feel free to rename the models, but don't rename db_table values or field names.
 from typing import Any
 from django.db import models
+from django.contrib.auth import authenticate
 
 
 class CursarEstudianteCursos(models.Model):
@@ -99,6 +100,8 @@ class Estudiante(models.Model):
     class Meta:
         managed = False
         db_table = 'estudiante'
+
+
     def __str__(self):
         return f"{self.nombre} /// {self.correo} /// {self.rol} /// ID: {self.id}"
 

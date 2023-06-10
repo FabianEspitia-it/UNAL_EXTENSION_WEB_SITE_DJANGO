@@ -18,7 +18,7 @@
         <form method="post">
             {% csrf_token %}
             <input name="mail" type="email" placeholder="Email" required>
-            <input name= "contraseña "type="password" placeholder="Password" required>
+            <input name= "contraseña" type="password" placeholder="Password" required>
             <input name="rol" type="text" list="opciones" placeholder="Role" required>
             <datalist id="opciones">
                 <option value="Admin">

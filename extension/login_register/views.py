@@ -5,14 +5,20 @@ from .models import Estudiante
 # Create your views here.
 
 def loginView(request):
-    if request.method == "POST":
+    if request.method == "POST": 
         try:
-            Estudiante.objects.get(correo = request.POST["mail"])
-            return redirect("admin")
+            usuario = Estudiante.objects.get(correo = request.POST["mail"])
+            
+            if usuario.contraseña == request.POST["contraseña"]:
+                return redirect("admin")
+            else:
+                error = "Password dont match"
+                return render(request, "login.html", {"error": error})
+                 
         except:
             error = "User does not exists"
             return render(request, "login.html", {"error": error})
-
+      
     return render(request, "login.html")
 
 def registerView(request):
