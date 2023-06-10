@@ -78,23 +78,30 @@ def update_courses(request):
         else:
             return render(request, 'update_courses.html')
     except:
-         error = "COURSE DONT MATCH"
+         error = "SOMETHING WRONG"
          return render(request, 'update_courses.html', {
               'error': error
          })
          
 
 def add_courses(request):
-    if request.method == 'POST':
-            CursosDiplomados.objects.create(nombre = request.POST["nombre"], 
-            id_profesor = Profesor.objects.get(id = request.POST["profesor"]), 
-            fecha = request.POST["fecha"], 
-            id_modalidad = Modalidad.objects.get(id = request.POST["modalidad"]))
+    try:
+        if request.method == 'POST':
+                CursosDiplomados.objects.create(nombre = request.POST["nombre"], 
+                id_profesor = Profesor.objects.get(id = request.POST["profesor"]), 
+                fecha = request.POST["fecha"], 
+                id_modalidad = Modalidad.objects.get(id = request.POST["modalidad"]))
 
-            return redirect("courses")
+                return redirect("courses")
+        else:
+            return render(request, 'add_courses.html')
+    except:
+        error = "SOMETHING WRONG"
+        return render(request, 'add_courses.html', {
+            'error': error
+        })
 
-    else:
-        return render(request, 'add_courses.html')
+    
     
 def deleteCourse(request):
     if request.method == "POST":

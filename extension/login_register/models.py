@@ -45,7 +45,7 @@ class CursosDiplomados(models.Model):
         try:
             return f"{self.nombre} // {self.fecha} // {self.id_modalidad} // {self.id_profesor.nombre} // ID: {self.id}"
         except:
-            return f"{self.nombre} // {self.fecha} // {self.id_modalidad} // {None}"
+            return f"{self.nombre} // {self.fecha} // {self.id_modalidad} // {None} // ID: {self.id}"
 
 
 

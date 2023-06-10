@@ -15,24 +15,32 @@
     <main>
         <form method="post">
             {% csrf_token %}
+            {% if error %}
+                <div>
+                    <h3>Course name:</h3>
+                    <input name="nombre" type="text" required placeholder="{{error}}">
+                </div>
+            {% else %}
             <div>
                 <h3>Course name:</h3>
-                <input name="nombre" type="text" >
+                <input name="nombre" type="text" required>
             </div>
+            {% endif %}
+
             
             <div>
                 <h3>Teacher:</h3>
-                <input name="profesor" type="number" >
+                <input name="profesor" type="number" required>
             </div>
             
             <div>
                 <h3>Date:</h3>   
-                <input name="fecha" type="date" >
+                <input name="fecha" type="date" required>
             </div>
             
             <div>
                 <h3>Mode:</h3>   
-                <input name="modalidad" type="number">
+                <input name="modalidad" type="number" required>
             </div>
 
             <button class="update">ADD COURSE</button> 
