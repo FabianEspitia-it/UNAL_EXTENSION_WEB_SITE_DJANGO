@@ -8,7 +8,7 @@ def loginView(request):
     if request.method == "POST": 
         try:
             usuario = Estudiante.objects.get(correo = request.POST["mail"])
-            
+
             if usuario.contraseña == request.POST["contraseña"]:
                 return redirect("admin")
             else:
@@ -25,12 +25,12 @@ def registerView(request):
     if request.method == "POST":
         if request.POST["contraseña"] == request.POST["confirmPassword"]:
                     try:
-                        print(Estudiante.objects.get(correo = request.POST["mail"]))
                         Estudiante.objects.create(nombre = request.POST["userName"],
                         correo = request.POST["mail"],
                         contraseña = request.POST["contraseña"],
                         rol = request.POST["rol"]
                         )
+                        print(Estudiante.objects.get(correo = request.POST["mail"]))
                         return redirect("admin")
                     except:
                         error = 'User already exists'

@@ -11,14 +11,15 @@
 <body>
     <a href="/panel/admin"><button class="home">🏠Home</button></a>
     <h1> ADMIN PANEL COURSES </h1>
-        {% for n in cursos %}    
-            <p> {{n}} </p>
-            <a href="courses/update_courses"><button class="boton1">Update</button></a>
-            <a href="courses/delete_courses"><button class="boton2">Delete</button></a>
+        {% for n in cursos %}
+                <p> {{n}} </p>
+                <a href="courses/update_courses"><button class="boton1">Update</button></a>
+                <a href="courses/delete_courses"><button class="boton2">Delete</button></a>
+
         {% endfor %}
         <section>
             <h2> FILTER BY </h2>
-            <input type="text" placeholder="Course_name">
+            <input name= "buscador" type="text" placeholder="Course_name">
             <a href="courses/add_courses"><button class="update"> ADD COURSE </button></a>
         </section>
 </body>
