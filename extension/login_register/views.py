@@ -18,12 +18,18 @@ def loginView(request):
 def registerView(request):
     if request.method == "POST":
         if request.POST["contraseña"] == request.POST["confirmPassword"]:
-            Estudiante.objects.create(nombre = request.POST["userName"],
-            correo = request.POST["mail"],
-            contraseña = request.POST["contraseña"],
-            rol = request.POST["rol"]
-            )
-            return redirect("admin")
+                    try:
+                        print(Estudiante.objects.get(correo = request.POST["mail"]))
+                        Estudiante.objects.create(nombre = request.POST["userName"],
+                        correo = request.POST["mail"],
+                        contraseña = request.POST["contraseña"],
+                        rol = request.POST["rol"]
+                        )
+                        return redirect("admin")
+                    except:
+                        error = 'User already exists'
+                        return render(request, "register.html", {'error': error})
+                         
         else:
             error = 'Password dont match'
             return render(request, "register.html", {'error': error})

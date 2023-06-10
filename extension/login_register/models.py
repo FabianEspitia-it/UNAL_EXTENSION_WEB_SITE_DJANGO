@@ -100,7 +100,7 @@ class Estudiante(models.Model):
         managed = False
         db_table = 'estudiante'
     def __str__(self):
-        return f"{self.nombre} /// {self.correo} /// {self.rol}"
+        return f"{self.nombre} /// {self.correo} /// {self.rol} /// ID: {self.id}"
 
 
 class Facultad(models.Model):
