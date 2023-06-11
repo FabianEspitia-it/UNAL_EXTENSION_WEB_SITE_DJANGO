@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from login_register.models import Estudiante, Profesor, CursosDiplomados, Modalidad, ServicioDetalleEstado, Decano, Proyecto
-from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 
@@ -10,14 +10,13 @@ def inProgressView(request):
 def inProgressView1(request):
     return render(request, 'inprogres1.html')
 
-@login_required
+
 def panelView(request):
     return render(request, 'panel.html')
 
 def studentPanelView(request):
      return render(request, "studentPanel.html")
 
-@login_required
 def coursesView(request):
     cursos = CursosDiplomados.objects.all()
     return render(request, 'cursos.html', {
