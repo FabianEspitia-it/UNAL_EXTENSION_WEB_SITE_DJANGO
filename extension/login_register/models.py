@@ -167,7 +167,7 @@ class Profesor(models.Model):
         managed = False
         db_table = 'profesor'
     def __str__(self):
-        return f"{self.nombre} /// {self.correo} /// ID: {self.id}"
+        return f"{self.nombre} /// {self.correo} /// {self.id_facultad} /// ID: {self.id}"
 
 
 class Proyecto(models.Model):

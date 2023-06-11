@@ -72,7 +72,7 @@ input{
     position: relative;
     padding: 0.5rem;
     outline: none;
-    border: none;
+    border: 0.17rem solid rgb(203, 203, 203);
     display: block;
     margin: auto;
     margin-bottom: 1%;
@@ -91,7 +91,7 @@ input{
     left: 32rem;
     width: 15rem;
     border-radius: 5rem;
-    border: none;
+    border: 2px solid rgba(175, 244, 198, 0.543);
     background-color: rgb(37, 250, 147);
     color: black;
     transition: 0.5s;
