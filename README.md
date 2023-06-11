@@ -1,6 +1,6 @@
 # UNAL EXTENSION
 
-This is a University project made with the Django Framework that tries to representante the National University Extension module. This is the final project of the subject Databases.
+This is a University project made with the Django Framework that tries to representante the National University Extension module. This is the Databases final project.
 
 ## Tech Stack
 
