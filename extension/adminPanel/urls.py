@@ -5,6 +5,7 @@ from .views import *
 
 urlpatterns = [
     path("admin/", panelView, name="admin"),
+    path("student/", studentPanelView, name= "student"),
     path("admin/courses", coursesView, name="courses" ),
     path("admin/students/", studentsListView, name="students"),
     path("admin/teachers/", teacherListView, name="teachers"),
@@ -15,5 +16,6 @@ urlpatterns = [
     path("admin/services", servicesListView, name="services"),
     path("admin/deans", decanosListView, name="deans"),
     path("admin/projects", projectsListView, name="projects"),
-    path("inprogres/", inProgressView, name="inprogres")
+    path("inprogres/", inProgressView, name="inprogres"),
+    path("inprogres1/", inProgressView1, name="inprogres1")
 ]

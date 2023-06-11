@@ -9,8 +9,12 @@ def loginView(request):
         try:
             usuario = Estudiante.objects.get(correo = request.POST["mail"])
 
-            if usuario.contraseña == request.POST["contraseña"]:
+            if usuario.contraseña == request.POST["contraseña"] and request.POST["rol"] == "ADMIN":
                 return redirect("admin")
+            
+            elif usuario.contraseña == request.POST["contraseña"] and (request.POST["rol"] == "STUDENT" or request.POST["rol"] == "Student"):
+                return redirect("student")
+            
             else:
                 error = "Password dont match"
                 return render(request, "login.html", {"error": error})
@@ -31,7 +35,10 @@ def registerView(request):
                         rol = request.POST["rol"]
                         )
                         print(Estudiante.objects.get(correo = request.POST["mail"]))
-                        return redirect("admin")
+                        if request.POST["rol"] == "ADMIN":
+                            return redirect("admin")
+                        else:
+                             return redirect("student")
                     except:
                         error = 'User already exists'
                         return render(request, "register.html", {'error': error})

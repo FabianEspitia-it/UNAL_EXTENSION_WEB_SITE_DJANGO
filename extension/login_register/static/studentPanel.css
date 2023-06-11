@@ -1,0 +1,65 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat Alternates', sans-serif;
+   
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body{
+    background-color: #77aa77;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 2 1'%3E%3Cdefs%3E%3ClinearGradient id='a' gradientUnits='userSpaceOnUse' x1='0' x2='0' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%2377aa77'/%3E%3Cstop offset='1' stop-color='%234fd'/%3E%3C/linearGradient%3E%3ClinearGradient id='b' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='0' y2='1'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3ClinearGradient id='c' gradientUnits='userSpaceOnUse' x1='0' y1='0' x2='2' y2='2'%3E%3Cstop offset='0' stop-color='%23cf8' stop-opacity='0'/%3E%3Cstop offset='1' stop-color='%23cf8' stop-opacity='1'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect x='0' y='0' fill='url(%23a)' width='2' height='1'/%3E%3Cg fill-opacity='0.5'%3E%3Cpolygon fill='url(%23b)' points='0 1 0 0 2 0'/%3E%3Cpolygon fill='url(%23c)' points='2 1 2 0 0 0'/%3E%3C/g%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+h1{
+    margin-top: 2%;
+    font-size: 4.0rem;
+    color: white;
+    text-align: center;
+}
+
+
+
+.options{
+    font-size: xx-large;
+    margin-top: 5%;
+    margin-bottom: 3%;
+    margin-left: 7%;
+    width: 50rem;
+    height: 35rem;
+    display: inline-block;
+    background-color: white;
+    border: 0.17rem solid rgb(203, 203, 203);;
+    border-radius: 1rem;
+    transition: 0.4s;
+}
+
+.options:hover{
+    color: rgb(199, 247, 215);
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+    
+}
+
+.home{
+    color: black;
+    position: absolute;
+    bottom: 53rem;
+    left: 91%;
+    background-color: #90EE90;
+    border: 2px solid rgb(175, 244, 198); 
+    width: 9rem;
+    height: 3rem;
+    border-radius: 1rem;
+    transition: 0.5s;
+}
+
+.home:hover{
+    color: white;
+    box-shadow: rgba(175, 244, 198, 0.4) 5px 5px, rgba(175, 244, 198, 0.3) 10px 10px, rgba(175, 244, 198, 0.2) 15px 15px, rgba(175, 244, 198, 0.1) 20px 20px, rgba(175, 244, 198, 0.05) 25px 25px;
+}

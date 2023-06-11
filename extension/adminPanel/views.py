@@ -7,9 +7,15 @@ from django.contrib.auth.decorators import login_required
 def inProgressView(request):
     return render(request, 'inprogres.html')
 
+def inProgressView1(request):
+    return render(request, 'inprogres1.html')
+
 @login_required
 def panelView(request):
     return render(request, 'panel.html')
+
+def studentPanelView(request):
+     return render(request, "studentPanel.html")
 
 @login_required
 def coursesView(request):
