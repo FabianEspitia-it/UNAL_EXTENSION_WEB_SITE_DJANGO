@@ -113,7 +113,7 @@ def add_courses(request):
 def deleteCourse(request):
     if request.method == "POST":
         try:
-                curso = CursosDiplomados.objects.get(nombre = request.POST["nombre"])
+                curso = CursosDiplomados.objects.filter(nombre = request.POST["nombre"]).first()
                 curso.delete()
                 return redirect("courses")
         except:
